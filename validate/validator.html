@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>positive number</title>
+<script src="../jquery-1.12.3.min.js"></script>
+<script src="jq_validate.js"></script>
+<script type="text/javascript">
+$(function (){
+	$("#positive_number").myvalidate({
+		filter_type: "positiveNumber", 
+		enterCallback: function (obj){
+			//enter key callback
+			alert(parseFloat(obj.val()));
+		}, valCallback: function (val){
+			//pressup callback,  return value
+			$("div").html(val);
+		}
+	});
+	$("#positive_number").focus();
+});
+</script>
+</head>
+<body>
+<input id="positive_number" placeholder="input positive number" />
+<br/>result:
+<div></div>
+</body>
+</html>
